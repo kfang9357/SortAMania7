@@ -86,6 +86,38 @@ public class SortingUtilities
         return false;
     }
 
+    public static void insertionSort5(Comparable[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = i; j > 0; j--) {
+                if (arr[j - 1].compareTo(arr[j]) > 0) {
+                    swap5(arr, j, j - 1);
+                } else {
+                    break;
+                }
+            }
+        }
+    }
+    public static int binarySearch5(Comparable[] arr, Comparable a) {
+        int i = 0;
+        int j = arr.length - 1;
+        int k = i + (j - i) / 2;
+        int l = a.compareTo(arr[k]);
+        while (i <= j) {
+            if (l == 0)
+                return k;
+            if (l > 0)
+                i = k + 1;
+            else
+                j = k - 1;
+        }
+        return -1;
+    }
+    public static void swap5(Comparable[] arr, int a, int b) {
+        Comparable temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
     public static boolean isUnsorted2(int[][] arr)
     {
         int len = arr.length/2;

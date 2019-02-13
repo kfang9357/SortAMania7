@@ -1,14 +1,12 @@
 package com.company;
 
-import static com.company.SortingUtilities.isUnsorted2;
-import static com.company.SortingUtilities.median;
-import static com.company.SortingUtilities.swap;
+import static com.company.SortingUtilities.*;
 import static com.company.Sorts.insertionSort;
 
 public class Team7SortCompetition extends SortCompetition {
 
     public String greeting() {
-        return "Hello";
+        return "I am doing my best.";
     }
 
     public int challengeOne(int[] arr) {
@@ -58,4 +56,7 @@ public class Team7SortCompetition extends SortCompetition {
         int length = (arr.length) / 2;
         return median(arr[length]);
     }
-}
+
+
+    }
+
