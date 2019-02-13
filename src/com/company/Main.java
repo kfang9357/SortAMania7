@@ -101,7 +101,7 @@ public class Main {
             System.out.print(thing[i]+" ");
         }
         System.out.println();
-        System.out.println("Printing out the index of the query in thing array: "+team7.challengeFive(thing, thing[0]));
+        System.out.println("Index: "+team7.challengeFive(thing, thing[0]));
         for(int i=0; i<thing.length; i++){
             System.out.print(thing[i]+" ");
         }
