@@ -86,6 +86,19 @@ public class SortingUtilities
         return false;
     }
 
+    public static boolean isUnsorted2(int[][] arr)
+    {
+        int len = arr.length/2;
+        for (int i = 0; i < arr.length-1; i++)
+        {
+            if (arr[i][len]>arr[i+1][len])
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static boolean isUnsorted2(Comparable[] objectArr)
     {
         int len = objectArr.length - 1;
