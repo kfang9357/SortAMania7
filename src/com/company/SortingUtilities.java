@@ -112,6 +112,7 @@ public class SortingUtilities
         }
         return -1;
     }
+
     public static void swap5(Comparable[] arr, int a, int b) {
         Comparable temp = arr[a];
         arr[a] = arr[b];

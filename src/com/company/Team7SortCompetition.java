@@ -57,6 +57,43 @@ public class Team7SortCompetition extends SortCompetition {
         return median(arr[length]);
     }
 
+    public int challengeFive(Comparable[] arr, Comparable query) {
+        compareSort(arr);
+        int max = arr.length - 1;
+        int min = 0;
+        for (int i = (min + max) / 2; min <= max; i = (min + max) / 2) {
+            if (arr[i].compareTo(query) == 0) {
+                return i;
+            } else if (arr[i].compareTo(query) > 0) {
+                max = i - 1;
+            } else if (arr[i].compareTo(query) < 0) {
+                min = i + 1;
+            }
+        }
+        return -1;
 
+    }
+
+    public Comparable[] compareSort(Comparable[] arr){
+        for(int i=0; i<arr.length; i++){
+            for(int j=1; j<arr.length; j++){
+                if(arr[j-1].compareTo(arr[j])>0){
+                    Comparable temp = arr[j - 1];
+                    arr[j - 1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+
+    public Thingy[] randomThingArr(int num)
+    {
+        Thingy[] things = new Thingy[num];
+        for (int i = 0; i<num; i ++) {
+            things[i] = new Thingy();
+        }
+        return things;
+    }
     }
 

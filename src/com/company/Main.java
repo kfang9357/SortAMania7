@@ -95,7 +95,18 @@ public class Main {
 
         /**** challenge 5 test *****/
 
+        Thingy[] thing = team7.randomThingArr(5);
         {System.out.println("not sure about challenge 5 yet");}
+        for(int i=0; i<thing.length; i++){
+            System.out.print(thing[i]+" ");
+        }
+        System.out.println();
+        System.out.println("Printing out the index of the query in thing array: "+team7.challengeFive(thing, thing[0]));
+        for(int i=0; i<thing.length; i++){
+            System.out.print(thing[i]+" ");
+        }
+        System.out.println();
+
     }
 
     public static void printArr(int[] arr) {

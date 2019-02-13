@@ -21,4 +21,5 @@ public class Thingy implements Comparable<Thingy> {
     {
         return this.value-other.value;
     }
+
 }
