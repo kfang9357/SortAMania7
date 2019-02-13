@@ -15,11 +15,11 @@ public class Main {
         System.out.println(" ");
         System.out.println(" ");
 
-        long time = System.currentTimeMillis();
+        long time = System.nanoTime();
         int median = team7.challengeOne(randIntArr);
-        time = System.currentTimeMillis() - time;
+        time = System.nanoTime() - time;
 
-        System.out.println("Challenge One Time Taken: " + time*.001 + " seconds.");
+        System.out.println("Challenge One Time Taken: " + time + " nanoseconds.");
         System.out.println("Median Equals: " + median);
 
         System.out.println("Sorted");
@@ -38,11 +38,11 @@ public class Main {
         System.out.println(" ");
         System.out.println(" ");
 
-        long time2 = System.currentTimeMillis();
+        long time2 = System.nanoTime();
         int index = team7.challengeTwo(randStringArr, "kelly");
-        time2 = System.currentTimeMillis() - time2;
+        time2 = System.nanoTime() - time2;
 
-        System.out.println("Challenge Two Time Taken: " + time2*0.001 + " seconds.");
+        System.out.println("Challenge Two Time Taken: " + time2 + " nanoseconds.");
         System.out.println("Index of Query Equals: " + index);
 
         System.out.println("Sorted");
@@ -59,11 +59,11 @@ public class Main {
         System.out.println(" ");
         System.out.println(" ");
 
-        long time3 = System.currentTimeMillis();
+        long time3 = System.nanoTime();
         int median2 = team7.challengeThree(randIntArr2);
-        time3 = System.currentTimeMillis() - time3;
+        time3 = System.nanoTime() - time3;
 
-        System.out.println("Challenge Three Time Taken: " + time3 * 0.001 + " seconds.");
+        System.out.println("Challenge Three Time Taken: " + time3 + " nanoseconds.");
         System.out.println("Median Equals: " + median2);
 
         System.out.println("Sorted");
@@ -80,11 +80,11 @@ public class Main {
         System.out.println(" ");
         System.out.println(" ");
 
-        long time4 = System.currentTimeMillis();
+        long time4 = System.nanoTime();
         int median3 = team7.challengeFour(randint2darr);
-        time4 = System.currentTimeMillis() - time4;
+        time4 = System.nanoTime() - time4;
 
-        System.out.println("Challenge Four Time Taken: " + time4 * 0.001 + " seconds.");
+        System.out.println("Challenge Four Time Taken: " + time4 + " nanoseconds.");
         System.out.println("Median Equals: " + median3);
 
         System.out.println("Sorted");
@@ -107,11 +107,13 @@ public class Main {
     }
 
     public static void print2D(int[][] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                System.out.print(arr[i][j] + " ");
+        for (int[] x : arr) {
+            for (int y : x) {
+                System.out.print(y + " ");
             }
+            System.out.println();
         }
     }
 }
+
 

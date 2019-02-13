@@ -1,5 +1,8 @@
 package com.company;
 
+import static com.company.SortingUtilities.median;
+import static com.company.Sorts.insertionSort;
+
 public class Team7SortCompetition extends SortCompetition {
 
     public String greeting()
@@ -9,8 +12,8 @@ public class Team7SortCompetition extends SortCompetition {
     public int challengeOne(int[] arr){
         /** Data Set - an array of 10,000 random integers between 0-10000
          Task: Sort the list and return the median **/
-        Sorts.insertionSort(arr);
-        return SortingUtilities.median(arr);
+        insertionSort(arr);
+        return median(arr);
     }
 
     public int challengeTwo(String[] arr, String query)
@@ -31,8 +34,8 @@ public class Team7SortCompetition extends SortCompetition {
     public int challengeThree(int[] arr){
         /** Data Set - a mostly sorted array of 100,000 integers (>75% of elements are in the correct order)
          Task: Sort the list and return the median **/
-        Sorts.insertionSort(arr);
-        return SortingUtilities.median(arr);
+        insertionSort(arr);
+        return median(arr);
     }
 
     public int challengeFour(int[][] arr) {
@@ -40,30 +43,14 @@ public class Team7SortCompetition extends SortCompetition {
          Task: Sort each sub-array and then sort the arrays by their median value
          Return the median of the median array **/
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                for (int k = 0; k < arr[i].length - j; k++) {
-                    if (arr[i][k] > arr[i][k + 1]) {
-                        int t = arr[i][k];
-                        arr[i][k] = arr[i][k + 1];
-                        arr[i][k + 1] = t;
-                    }
-                }
-            }
+            insertionSort(arr[i]);
         }
-        for (int i = 0; i < arr.length - 1; i++) {
-            {
-                {
-                    if (SortingUtilities.median(arr[i]) > SortingUtilities.median(arr[i + 1])) {
-                        {
-                            int[] temp = arr[i];
-                            arr[i] = arr[i + 1];
-                            arr[i + 1] = temp;
-                        }
-                    }
-                }
-            }
+        int[] median = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            median[i] = median(arr[i]);
         }
-        return SortingUtilities.median(arr[500]);
+        insertionSort(median);
+        return (median(median));
     }
 
 
